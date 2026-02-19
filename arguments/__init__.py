@@ -64,7 +64,7 @@ class ModelParams(ParamGroup):
         self.default_roughness = 0.0  # 0.6 in GaussianShader
         self.default_tint = 0.0
         self.default_diffuse = 0
-        self.alpha_threshold = 0.0
+        self.alpha_threshold = 0.5
         self.render_items = ['RGB', 'Alpha', 'Normal', 'Depth', 'Edge', 'Curvature']
 
         # 3DGS-DR solution for real scenes

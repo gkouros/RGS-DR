@@ -32,6 +32,17 @@ extra_args = ' ' + ' '.join(args.extra_args)
 exp_name = args.out + extra_args.replace("wandb","").replace("gui","").replace(" --",".").replace(" ",".").replace("=","")
 # exp_name = exp_name[:200]  # 255 characters is the limit for directory names
 
+envscopes = {
+    "gardenspheres": "--env_scope_radius 0.974 --env_scope_center -0.2270 1.9700 1.7740",
+    "sedan": "--env_scope_radius 2.138 --env_scope_center -0.032 0.808 0.751",
+    "toycar": "--env_scope_radius 2.707 --env_scope_center 0.6810 0.8080 4.4550",
+}
+resolutions = {
+    "gardenspheres": "-r4",
+    "sedan": "-r8",
+    "toycar": "-r4",
+}
+
 dataset = "ref_real"
 scenes = ["gardenspheres", "sedan", "toycar"]
 
@@ -66,7 +77,7 @@ def train_scene(gpu, scene, factor):
 
     if not args.skip_train:
         cmd = f"OMP_NUM_THREADS=4 CUDA_VISIBLE_DEVICES={gpu} python train.py -s {dataset_dir}/{scene} -m {output_dir}/{scene} --run_id {run_id} --eval --white_background {extra_args}"
-        # cmd += " --alpha_threshold=0.0 --lambda_alpha=0.0"
+        cmd += f" {envscopes[scene]} {resolutions[scene]}"
         if args.refine:
             cmd += " --iterations=35000 --use_residual --residual_from_iter=30000"
         run_script(cmd)

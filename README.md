@@ -5,6 +5,7 @@ Georgios Kouros, Minye Wu, Tinne Tuytelaars
 
 **This repository contains the official implementation of the paper "RGS-DR: Deferred Reflections and Residual Shading in 2D Gaussian Splatting" that will appear at 3DV 2026.**
 
+Also, check out our follow-up work [SpecGloss-GS](https://github.com/gkouros/SpecGloss-GS)!
 
 ## Abstract
 In this work, we address specular appearance in inverse rendering using 2D Gaussian splatting with deferred shading and argue for a refinement stage to improve specular detail, thereby bridging the gap with reconstruction-only methods. Our pipeline estimates editable material properties and environment illumination while employing a directional residual pass that captures leftover view-dependent effects for further refining novel view synthesis. In contrast to per-Gaussian shading with shortest-axis normals and normal residuals, which tends to result in more noisy geometry and specular appearance, a pixel-deferred surfel formulation with specular residuals yields sharper highlights, cleaner materials, and improved editability. We evaluate our approach on rendering and reconstruction quality on three popular datasets featuring glossy objects, and also demonstrate high-quality relighting and material editing.
@@ -84,6 +85,7 @@ We gratefully acknowledge the following works that were instrumental in the deve
 - [3DGS-DR](https://github.com/gapszju/3DGS-DR)
 - [GaussianShader](https://github.com/Asparagus15/GaussianShader)
 - [2DGS](https://github.com/hbb1/2d-gaussian-splatting)
+
 ## BibTeX
 ```bibtex
 @misc{kouros2025rgsdr,

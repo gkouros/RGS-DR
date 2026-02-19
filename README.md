@@ -80,10 +80,10 @@ Then on a web browser go to the following address: https://localhost:8080
 
 ## Acknowledgement
 We gratefully acknowledge the following works that were instrumental in the development of our method:
+- [Ref-GS](https://github.com/YoujiaZhang/Ref-GS)
 - [3DGS-DR](https://github.com/gapszju/3DGS-DR)
 - [GaussianShader](https://github.com/Asparagus15/GaussianShader)
 - [2DGS](https://github.com/hbb1/2d-gaussian-splatting)
-
 ## BibTeX
 ```bibtex
 @misc{kouros2025rgsdr,
